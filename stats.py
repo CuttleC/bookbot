@@ -13,3 +13,16 @@ def char_counter(book_text):
             all_chars[lower_character] = 1
     
     return all_chars
+
+def char_count_sorter(all_chars):
+    sorted_chars = []
+    
+    for character,num_occurence in all_chars.items():
+        temp = {"char":character, "num":num_occurence}
+        sorted_chars.append(temp)
+    
+    sorted_chars.sort(reverse=True,key=num_comparer)
+    return sorted_chars
+
+def num_comparer(char_dict):
+    return char_dict["num"]
