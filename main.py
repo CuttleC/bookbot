@@ -11,5 +11,8 @@ def main():
     book_contents = get_book_text("books/frankenstein.txt")
     amount_of_words = word_counter(book_contents)
     print(f"{amount_of_words} words found in the document")
+    all_chars = char_counter(book_contents)
+    for character,num_occurence in all_chars.items():
+        print(f"\'{character}\': {num_occurence}")
 
 main()
